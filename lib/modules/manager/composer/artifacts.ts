@@ -247,7 +247,8 @@ export async function updateArtifacts({
         'Your requirements could not be resolved to an installable set of packages.',
       )
     ) {
-      logger.info('Composer requirements cannot be resolved');
+      // Do not generate these PRs
+      throw new Error('Composer requirements cannot be resolved');
     } else if (err.message?.includes('write error (disk full?)')) {
       throw new Error(SYSTEM_INSUFFICIENT_DISK_SPACE);
     } else {

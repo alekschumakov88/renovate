@@ -8,3 +8,6 @@ if [[ "${CODESPACES}" == true ]]; then
 fi
 
 pnpm install
+sudo install-tool php 8.3.4
+sudo install-tool composer 2.7.2
+
